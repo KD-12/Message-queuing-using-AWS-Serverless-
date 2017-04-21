@@ -11,14 +11,27 @@ The API Gateway is used to deploy the functions onto an endpoint for universal a
 The SQS helps in queuing the messages in the cloud that can retrieved online. 
 
 Steps of Implementation
+Creating lambda Functions
+ Step 1: Creating the Lambda functions to perform enqueuing on the message queue- enqueue.py.
+ Step2: Creating a lambda function to retrieve the messages from the queue service-test.py
+ 
+ Creating a SQS 
+ Step 1: Go to services tab of the AWS service and select SQS
+ Step 2: Press on the Create a new queue button
+ Step 3: Type in the name of the queue as "test-messages"
 
- Step 1: Creating the Lambda functions to perform enqueuing on the message queue. 
- Step 2: Creating a message queue on the SQS
- Step 3: Creating an api to deploy the lambda functions created
- Step 4: Defining the get, post methods of the api in order to define the data that shall be enqueued and the data that shall be displayed on the screen after enqueuing.
- Step 5: Deploying the api
- Step 6: Viewing the endpoint
- 
- 
+Creating an API
+Step 1:Under the services tab of the AWS service > API Gateway
+Step 2:Create an API button
+Step 3:Name of the API 
+Step 4: Under the actions tab of the API Gateway click on Create Resources> message
+Step 5:Now under message resource go to actions>Create method
+Step 6: Add a post method>lambda function>link to the lambda function enqueue.py
+Step 7:  Add a get method>lambda function>link to the lambda function test.py
+Step 8: Actions>Deploy API. Name the stage as newdev and Delpoy.
+
+Viewing your Endpoint
+An Inovke URL shall be displayed on the side append /messages to the url and visit it
+
 
 
